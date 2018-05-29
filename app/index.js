@@ -2,16 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // import { Route, Router, hashHistory, IndexRoute } from 'react-router';
 
-import TodoApp from './components/TodoApp';
+// import './styles/styles.scss';
+import Person from '../playground/classes.js';
 
-import './styles/styles.scss';
+console.dir(Person);
 
-/**
-* import './redux-todo-example';
-**/
+import ComponentOne from './components/ComponentOne';
+import ComponentTwo from './components/ComponentTwo';
 
 ReactDOM.render(
-	<TodoApp />,
+	<div>
+		<ComponentOne />
+		<ComponentTwo />
+	</div>,
 	document.querySelector('#root')
 );
 
