@@ -1,6 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const isAdmin = true;
+const adminComponent = (Component) => {
+	return class Admin extends Component {
+		componentDidUpdate () {
+			console.log('Admin component did update');
+			if (super.componentDidUpdate) {
+				super.componentDidUpdate();
+			}
+		}
+
+		render () {
+			if (isAdmin) {
+				return (
+					<div className='callout secondary'>
+						<p className='alert label'>test text here</p>
+						{super.render()}
+					</div>
+				)
+			} else {
+				return 'No access';
+			}
+		}
+	};
+};
+
 class ComponentTwo extends React.Component {
 	constructor (props) {
 		super(props);
@@ -9,6 +34,10 @@ class ComponentTwo extends React.Component {
 		}
 
 		this.onClick = this.onClick.bind(this);
+	}
+
+	componentDidUpdate () {
+		console.log('ComponentTwo did update');
 	}
 
 	onClick () {
@@ -36,4 +65,4 @@ ComponentTwo.propTypes = {
 	count: PropTypes.number,
 }
 
-export default ComponentTwo;
+export default adminComponent(ComponentTwo);
