@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactClass from 'create-react-class';
+import PropTypes from 'prop-types';
 
 const ComponentOne = ReactClass({
 	getInitialState: function () {
@@ -11,6 +12,9 @@ const ComponentOne = ReactClass({
 		return {
 			count: 11,
 		}
+	},
+	propTypes: {
+		count: PropTypes.number
 	},
 	render: function() {
 		return(
