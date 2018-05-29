@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class ComponentTwo extends React.Component {
 	constructor (props) {
 		super(props);
 		this.state = {
-			count: 9,
+			count: props.count,
 		}
 	}
 	render () {
@@ -15,6 +16,14 @@ class ComponentTwo extends React.Component {
 			</div>
 		)
 	}
+}
+
+ComponentTwo.defaultProps = {
+	count: 50,
+}
+
+ComponentTwo.propTypes = {
+	count: PropTypes.number,
 }
 
 export default ComponentTwo;

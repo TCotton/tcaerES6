@@ -12,8 +12,8 @@ import ComponentTwo from './components/ComponentTwo';
 
 ReactDOM.render(
 	<div>
-		<ComponentOne />
-		<ComponentTwo />
+		<ComponentOne count={123} />
+		<ComponentTwo count={321} />
 	</div>,
 	document.querySelector('#root')
 );

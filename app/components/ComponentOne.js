@@ -4,7 +4,12 @@ import ReactClass from 'create-react-class';
 const ComponentOne = ReactClass({
 	getInitialState: function () {
 		return {
-			count: 10,
+			count: this.props.count,
+		}
+	},
+	getDefaultProps: function() {
+		return {
+			count: 11,
 		}
 	},
 	render: function() {
