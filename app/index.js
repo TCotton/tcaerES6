@@ -10,6 +10,8 @@ console.dir(Person);
 import ComponentOne from './components/ComponentOne';
 import ComponentTwo from './components/ComponentTwo';
 
+import '../playground/higher-order-functions.js';
+
 ReactDOM.render(
 	<div>
 		<ComponentOne count={123} />
